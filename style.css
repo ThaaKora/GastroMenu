@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: floralwhite;
+    color: mediumaquamarine;
+}
+
+header {
+    background-color: lightseagreen;
+    padding: 1rem;
+    text-align: center;
+    font-family:    "Al Bayan";
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff6666;
+}
+
+.submenu {
+    background-color: white;
+    list-style: none;
+    text-decoration: none;
+    color: mediumaquamarine;
+    margin: 0;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.submenu.hidden {
+    display: none;
+}
+
+.content {
+    display: none;
+    padding: 2rem;
+}
+
+.content.active {
+    display: block;
+}
+
+.category {
+    margin-bottom: 1rem;
+}
+
+.dish {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0.5rem 0;
+}
+
+button {
+    background-color: #900;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b00;
+}
+
+textarea,
+input[type="email"] {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #222;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 1rem;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gastro Menü</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
+
+</head>
+<body>
+<div id="cart-notification">Zum Warenkorb hinzugefügt</div>
+
+<header>
+    <h1>PARTYSERVICE "ALEXA"</h1>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('start')">Start</a></li>
+            <li><a href="#" onclick="toggleSubMenu()">Feier</a></li>
+            <li><a href="#" onclick="showSection('trauer')">Trauerfeier</a></li>
+            <li class="cart-indicator">
+                <a href="#" onclick="showCart()">🛒 Warenkorb</a>
+                <span id="cart-count" class="cart-count" style="display:none;">0</span>
+            </li>
+        </ul>
+    </nav>
+    <ul id="submenu" class="submenu hidden">
+        <li><a href="#" onclick="showSection('firmenfeier')">Firmenfeier</a></li>
+        <li><a href="#" onclick="showSection('geburtstag')">Geburtstag</a></li>
+        <li><a href="#" onclick="showSection('grillparty')">Grillparty</a></li>
+    </ul>
+</header>
+
+<main>
+    <section id="start" class="content active">
+        <h2>Willkommen</h2>
+        <p>Wählen Sie eine Kategorie aus dem Menü.</p>
+    </section>
+
+    <section id="firmenfeier" class="content">
+        <h2>Firmenfeier Menü</h2>
+        <div class="category">
+            <h3>Schwein</h3>
+            <div class="dish">
+                <span>Jägerschnitzel</span>
+                <button onclick="addToCart('Jägerschnitzel')">+</button>
+                <button onclick="removeFromCart('Jägerschnitzel')">−</button>
+            </div>
+        </div>
+        <div class="category">
+            <h3>Rind</h3>
+            <div class="dish">
+                <span>Rinderroulade</span>
+                <button onclick="addToCart('Rinderroulade')">+</button>
+                <button onclick="removeFromCart('Rinderroulade')">−</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="geburtstag" class="content">
+        <h2>Geburtstag Menü</h2>
+        <!-- Weitere Gerichte -->
+    </section>
+
+    <section id="grillparty" class="content">
+        <h2>Grillparty Menü</h2>
+        <!--  Gerichte -->
+    </section>
+
+    <section id="trauer" class="content">
+        <h2>Trauerfeier Menü</h2>
+        <div class="category">
+            <div class="dish">
+                <span>Kaffee & Kuchen</span>
+                <button onclick="addToCart('Kaffee & Kuchen')">+</button>
+                <button onclick="removeFromCart('Kaffee & Kuchen')">−</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="content">
+        <h2>Ihr Warenkorb</h2>
+        <div id="cart-items"></div>
+        <textarea id="message" placeholder="Ihre Mitteilung"></textarea>
+        <input type="email" id="email" placeholder="Ihre E-Mail" />
+        <button onclick="submitOrder()">Bestellung absenden</button>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 PARTYSERVICE "ALEXA" | Inhaber: Alexandra Weber</p>
+    <p>Impressum | Datenschutz</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
