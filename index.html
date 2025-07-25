@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,17 +7,16 @@
     <title>Gastro Menü</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="cart.css" />
-
 </head>
 <body>
 <div id="cart-notification">Zum Warenkorb hinzugefügt</div>
 
 <header>
-    <h1>PARTYSERVICE "ALEXA"</h1>
+    <h1>PARTYSERVICE "Alexa"</h1>
     <nav>
         <ul>
             <li><a href="#" onclick="showSection('start')">Start</a></li>
-            <li><a href="#" onclick="toggleSubMenu()">Feier</a></li>
+            <li><a href="#" onclick="toggleSubMenu()">Feier ▼</a></li>
             <li><a href="#" onclick="showSection('trauer')">Trauerfeier</a></li>
             <li class="cart-indicator">
                 <a href="#" onclick="showCart()">🛒 Warenkorb</a>
@@ -25,46 +25,85 @@
         </ul>
     </nav>
     <ul id="submenu" class="submenu hidden">
-        <li><a href="#" onclick="showSection('firmenfeier')">Firmenfeier</a></li>
-        <li><a href="#" onclick="showSection('geburtstag')">Geburtstag</a></li>
+        <li><a href="#" onclick="showSection('Feier & Anlässe')">Feier & Anlässe</a></li>
         <li><a href="#" onclick="showSection('grillparty')">Grillparty</a></li>
     </ul>
 </header>
 
 <main>
     <section id="start" class="content active">
-        <h2>Willkommen</h2>
-        <p>Wählen Sie eine Kategorie aus dem Menü.</p>
+        <h2>Willkommen bei Party Service Alexa</h2>
+        <p>
+            Gutes Essen macht glücklich!<br>
+            Planen Sie eine Firmenfeier, ein Familienfest, eine Grillparty oder ein Trauermahl?<br>
+            Dann sind Sie hier genau richtig. Für Anlässe ab 25 Personen finden Sie hier das passende Angebot.
+        </p>
     </section>
 
-    <section id="firmenfeier" class="content">
-        <h2>Firmenfeier Menü</h2>
-        <div class="category">
-            <h3>Schwein</h3>
-            <div class="dish">
-                <span>Jägerschnitzel</span>
-                <button onclick="addToCart('Jägerschnitzel')">+</button>
-                <button onclick="removeFromCart('Jägerschnitzel')">−</button>
-            </div>
+    <section id="Feier & Anlässe" class="content">
+        <h2>Feier Menüs</h2>
+        <p>Wählen Sie einfach aus, worauf Sie Lust haben – um Mengen, Feinabstimmung und Besonderheiten kümmern wir uns später persönlich per E-Mail.</p>
+
+        <nav class="inner-nav">
+            <ul>
+                <li><a href="#fleisch">Fleisch</a></li>
+                <li><a href="#beilagen">Beilagen</a></li>
+                <li><a href="#gemuese">Gemüse</a></li>
+                <li><a href="#fisch">Fisch</a></li>
+            </ul>
+        </nav>
+
+        <div class="category" id="fleisch">
+            <h3>Fleisch – Schwein</h3>
+            <div class="dish"><span>Krustenbraten mit Malzbier Sauce</span><button onclick="addToCart('Krustenbraten mit Malzbier Sauce')">+</button><button onclick="removeFromCart('Krustenbraten mit Malzbier Sauce')">−</button></div>
+            <div class="dish"><span>Steaks mit Zwiebel Sauce</span><button onclick="addToCart('Steaks mit Zwiebel Sauce')">+</button><button onclick="removeFromCart('Steaks mit Zwiebel Sauce')">−</button></div>
+            <div class="dish"><span>Pfefferbraten mit Madeira Sauce</span><button onclick="addToCart('Pfefferbraten mit Madeira Sauce')">+</button><button onclick="removeFromCart('Pfefferbraten mit Madeira Sauce')">−</button></div>
+            <div class="dish"><span>Schweinefilet Medaillons in Metaxa Sauce</span><button onclick="addToCart('Schweinefilet Medaillons in Metaxa Sauce')">+</button><button onclick="removeFromCart('Schweinefilet Medaillons in Metaxa Sauce')">−</button></div>
+            <div class="dish"><span>Schweinefilet Medaillons Melba</span><button onclick="addToCart('Schweinefilet Medaillons Melba')">+</button><button onclick="removeFromCart('Schweinefilet Medaillons Melba')">−</button></div>
+            <div class="dish"><span>Schweinefilet Medaillons in Speckmantel</span><button onclick="addToCart('Schweinefilet Medaillons in Speckmantel')">+</button><button onclick="removeFromCart('Schweinefilet Medaillons in Speckmantel')">−</button></div>
+            <div class="dish"><span>Schnitzel mit vers. Saucen</span><button onclick="addToCart('Schnitzel mit vers. Saucen')">+</button><button onclick="removeFromCart('Schnitzel mit vers. Saucen')">−</button></div>
+            <div class="dish"><span>Kohlrouladen</span><button onclick="addToCart('Kohlrouladen')">+</button><button onclick="removeFromCart('Kohlrouladen')">−</button></div>
+            <div class="dish"><span>Kleine Haxen in Sauce</span><button onclick="addToCart('Kleine Haxen in Sauce')">+</button><button onclick="removeFromCart('Kleine Haxen in Sauce')">−</button></div>
+
+            <h3>Fleisch – Rind</h3>
+            <div class="dish"><span>Rinderschmorr Braten mit Esterhazy Sauce</span><button onclick="addToCart('Rinderschmorr Braten mit Esterhazy Sauce')">+</button><button onclick="removeFromCart('Rinderschmorr Braten mit Esterhazy Sauce')">−</button></div>
+            <div class="dish"><span>Rinderrouladen Hausfrauen Art</span><button onclick="addToCart('Rinderrouladen Hausfrauen Art')">+</button><button onclick="removeFromCart('Rinderrouladen Hausfrauen Art')">−</button></div>
+            <div class="dish"><span>Bef Stroganow</span><button onclick="addToCart('Bef Stroganow')">+</button><button onclick="removeFromCart('Bef Stroganow')">−</button></div>
         </div>
-        <div class="category">
-            <h3>Rind</h3>
-            <div class="dish">
-                <span>Rinderroulade</span>
-                <button onclick="addToCart('Rinderroulade')">+</button>
-                <button onclick="removeFromCart('Rinderroulade')">−</button>
-            </div>
+
+        <div class="category" id="beilagen">
+            <h3>Beilagen</h3>
+            <div class="dish"><span>Gemüsereis</span><button onclick="addToCart('Gemüsereis')">+</button><button onclick="removeFromCart('Gemüsereis')">−</button></div>
+            <div class="dish"><span>Kartoffelgratin</span><button onclick="addToCart('Kartoffelgratin')">+</button><button onclick="removeFromCart('Kartoffelgratin')">−</button></div>
+            <div class="dish"><span>Spätzle</span><button onclick="addToCart('Spätzle')">+</button><button onclick="removeFromCart('Spätzle')">−</button></div>
+            <div class="dish"><span>Bandnudeln</span><button onclick="addToCart('Bandnudeln')">+</button><button onclick="removeFromCart('Bandnudeln')">−</button></div>
+            <div class="dish"><span>Buchweizen</span><button onclick="addToCart('Buchweizen')">+</button><button onclick="removeFromCart('Buchweizen')">−</button></div>
+            <div class="dish"><span>Rosmarin-Kartoffeln</span><button onclick="addToCart('Rosmarin-Kartoffeln')">+</button><button onclick="removeFromCart('Rosmarin-Kartoffeln')">−</button></div>
+        </div>
+
+        <div class="category" id="gemuese">
+            <h3>Gemüse</h3>
+            <div class="dish"><span>Gemüseplatte</span><button onclick="addToCart('Gemüseplatte')">+</button><button onclick="removeFromCart('Gemüseplatte')">−</button></div>
+            <div class="dish"><span>Kaisergemüse mit Sauce Hollandaise</span><button onclick="addToCart('Kaisergemüse mit Sauce Hollandaise')">+</button><button onclick="removeFromCart('Kaisergemüse mit Sauce Hollandaise')">−</button></div>
+            <div class="dish"><span>Blumenkohl, Brokkoli, Bohnen, Möhren</span><button onclick="addToCart('Blumenkohl, Brokkoli, Bohnen, Möhren')">+</button><button onclick="removeFromCart('Blumenkohl, Brokkoli, Bohnen, Möhren')">−</button></div>
+        </div>
+
+        <div class="category" id="fisch">
+            <h3>Fisch</h3>
+            <div class="dish"><span>Lachsfilet mit Hummersauce</span><button onclick="addToCart('Lachsfilet mit Hummersauce')">+</button><button onclick="removeFromCart('Lachsfilet mit Hummersauce')">−</button></div>
+            <div class="dish"><span>Fischfilet mit Möhren-Zwiebel-Schmand Sauce</span><button onclick="addToCart('Fischfilet mit Möhren-Zwiebel-Schmand Sauce')">+</button><button onclick="removeFromCart('Fischfilet mit Möhren-Zwiebel-Schmand Sauce')">−</button></div>
+            <div class="dish"><span>Fischfilet mit Walnuss-Schmand-Sauce</span><button onclick="addToCart('Fischfilet mit Walnuss-Schmand-Sauce')">+</button><button onclick="removeFromCart('Fischfilet mit Walnuss-Schmand-Sauce')">−</button></div>
+            <div class="dish"><span>Fischfilet mit Ital. Champignons-Tomaten-Sauce</span><button onclick="addToCart('Fischfilet mit Ital. Champignons-Tomaten-Sauce')">+</button><button onclick="removeFromCart('Fischfilet mit Ital. Champignons-Tomaten-Sauce')">−</button></div>
         </div>
     </section>
 
-    <section id="geburtstag" class="content">
-        <h2>Geburtstag Menü</h2>
-        <!-- Weitere Gerichte -->
-    </section>
 
     <section id="grillparty" class="content">
         <h2>Grillparty Menü</h2>
-        <!--  Gerichte -->
+
+
+
+        <!-- Weitere Gerichte -->
     </section>
 
     <section id="trauer" class="content">
@@ -81,14 +120,23 @@
     <section id="cart" class="content">
         <h2>Ihr Warenkorb</h2>
         <div id="cart-items"></div>
+
         <textarea id="message" placeholder="Ihre Mitteilung"></textarea>
         <input type="email" id="email" placeholder="Ihre E-Mail" />
+
+        <!-- 🕵️‍♂️ Honeypot-Feld gegen Bots (unsichtbar für echte Benutzer) -->
+        <div class="honeypot">
+            <label>Telefon (nicht ausfüllen):
+                <input type="text" id="honeypot" name="telefonnummer" autocomplete="off">
+            </label>
+        </div>
+
         <button onclick="submitOrder()">Bestellung absenden</button>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2025 PARTYSERVICE "ALEXA" | Inhaber: Alexandra Weber</p>
+    <p>&copy; 2025 PARTYSERVICE "Alexa" | Inhaberin: Alexandra Weber</p>
     <p>Impressum | Datenschutz</p>
 </footer>
 
