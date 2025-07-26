@@ -5,7 +5,8 @@ from email.message import EmailMessage
 from dotenv import load_dotenv
 import os
 
-# 🔐 Lade Umgebungsvariablen aus .env
+
+
 load_dotenv()
 
 EMAIL_USER = os.getenv("EMAIL_USER")
@@ -14,15 +15,15 @@ EMAIL_SMTP = os.getenv("EMAIL_SMTP")
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", 465))
 EMAIL_TO   = os.getenv("EMAIL_TO", EMAIL_USER)
 
-# 🌐 Flask starten
+
 app = Flask(__name__)
-CORS(app)  # erlaubt JS-Anfragen vom Browser
+CORS(app)  
 
 @app.route("/send", methods=["POST"])
 def send_mail():
     data = request.json
 
-    # Honeypot: Spam-Schutz
+    # Honeypot
     honeypot = data.get("info_code", "")
     if honeypot.strip():
         return jsonify({"status": "error", "message": "Bot erkannt"}), 400
@@ -30,6 +31,9 @@ def send_mail():
     cart = data.get("cart", {})
     message = data.get("message", "")
     email = data.get("email", "")
+    # Simple email validation
+    if not email or "@" not in email or "." not in email.split("@")[-1]:
+        return jsonify({"status": "error", "message": "Ungültige oder fehlende E-Mail-Adresse"}), 400
 
     bestellung = "\n".join([f"{item}: {menge}" for item, menge in cart.items()])
     text = f"""Neue Anfrage von {email}

@@ -67,18 +67,26 @@ function showCart() {
 function submitOrder() {
     const message = document.getElementById('message').value;
     const email = document.getElementById('email').value;
+    const honeypot = document.getElementById('honeypot').value; // wichtig!
 
-    fetch('https://DEIN_BACKEND/send', {
+    fetch('http://localhost:5000/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cart, message, email })
+        body: JSON.stringify({ cart, message, email, info_code: honeypot })
     })
-        .then(res => res.json())
-        .then(data => {
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === 'ok') {
             alert('Bestellung abgeschickt!');
             Object.keys(cart).forEach(k => delete cart[k]);
             updateCartCount();
             showCart();
-        })
-        .catch(err => alert('Fehler beim Senden'));
+        } else {
+            alert('Fehler beim Senden: ' + data.message);
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert('Verbindung zum Server fehlgeschlagen.');
+    });
 }
