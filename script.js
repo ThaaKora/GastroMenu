@@ -6,8 +6,13 @@ function showSection(id) {
 }
 
 function toggleSubMenu() {
-    document.getElementById('submenu').classList.toggle('hidden');
+    const submenu = document.getElementById('submenu');
+    const arrow = document.getElementById('feier-arrow');
+
+    submenu.classList.toggle('hidden');
+    arrow.classList.toggle('rotated');
 }
+
 
 function showNotification() {
     const note = document.getElementById('cart-notification');

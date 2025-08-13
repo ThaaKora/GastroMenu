@@ -2,16 +2,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: floralwhite;
-    color: mediumaquamarine;
-    font-size: 20px;
+    color: #303634;
 }
 
 header {
-    background-color: lightseagreen;
+    background-color: #1d565e;
     padding: 1rem;
     text-align: center;
     font-family:    "Al Bayan";
-    font-size: 1.25rem;
 }
 
 header h1 {
@@ -26,6 +24,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+
 }
 
 nav a {
@@ -41,6 +40,8 @@ nav a:hover {
 .submenu {
     background-color: white;
     list-style: none;
+    text-decoration: none;
+    color: #1d565e;
     margin: 0;
     padding: 0.5rem;
     display: flex;
@@ -52,22 +53,9 @@ nav a:hover {
     display: none;
 }
 
-.submenu a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.submenu a:hover {
-    color: #ff6666;
-    text-decoration: none;
-}
-
-
 .content {
     display: none;
     padding: 2rem;
-    color: black;
 }
 
 .content.active {
@@ -114,13 +102,13 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+/* Einheitliche Darstellung der Gerichte */
 .dish {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.4rem 0;
     border-bottom: 1px solid #ccc;
-
     max-width: 100%;
     flex-wrap: wrap;
 }
@@ -128,7 +116,7 @@ footer {
 .dish span {
     flex: 1;
     margin-right: 1rem;
-    color: black;
+    color: #303634;
 }
 
 .dish button {
@@ -154,7 +142,21 @@ footer {
     margin-bottom: 2rem;
 }
 
-.category h3 {
+.category h2 {
     margin-top: 0;
-    color: lightseagreen;
+    color: #297e8a;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#feier-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+#feier-arrow.rotated {
+    transform: rotate(180deg);
+}
+
