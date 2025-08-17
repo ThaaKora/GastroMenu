@@ -3,7 +3,16 @@ const cart = {};
 function showSection(id) {
     document.querySelectorAll('.content').forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+    const startBanner = document.getElementById('start-banner');
+    if (startBanner) {
+        if (id === 'start') {
+            startBanner.style.display = 'block';
+        } else {
+            startBanner.style.display = 'none';
+        }
+    }
 }
+
 
 function toggleSubMenu() {
     const submenu = document.getElementById('submenu');
@@ -37,14 +46,18 @@ function addToCart(item) {
     showNotification();
 }
 
-function removeFromCart(item) {
-    if (cart[item]) {
-        cart[item]--;
-        if (cart[item] <= 0) delete cart[item];
+function removeFromCart(itemName) {
+    if (cart[itemName]) {
+        cart[itemName]--;
+        if (cart[itemName] <= 0) {
+            delete cart[itemName];
+        }
+        updateCartCount();
     }
-    updateCartCount();
-    showCart();
+    event?.preventDefault();
+    event?.stopPropagation();
 }
+
 
 function deleteFromCart(item) {
     delete cart[item];
