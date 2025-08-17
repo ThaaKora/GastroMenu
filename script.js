@@ -85,9 +85,8 @@ function showCart() {
 function submitOrder() {
     const message = document.getElementById('message').value;
     const email = document.getElementById('email').value;
-    const honeypot = document.getElementById('honeypot').value; // wichtig!
 
-    fetch('http://localhost:5000/send', {
+    fetch('https://partyservice-backend.onrender.com/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cart, message, email, info_code: honeypot })
