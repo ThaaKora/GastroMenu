@@ -83,6 +83,7 @@ function showCart() {
 }
 
 function submitOrder() {
+    console.log("submitOrder aktiv")
     const message = document.getElementById('message').value;
     const email = document.getElementById('email').value;
 
