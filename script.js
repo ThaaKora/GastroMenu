@@ -90,7 +90,7 @@ function submitOrder() {
     fetch('https://partyservice-backend.onrender.com/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cart, message, email, info_code: honeypot })
+        body: JSON.stringify({ cart, message, email })
     })
     .then(res => res.json())
     .then(data => {
