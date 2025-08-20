@@ -6,6 +6,8 @@
     <title>Gastro Menü</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="cart.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 <div class="page-wrapper">
@@ -349,12 +351,29 @@
 
         </section>
     </main>
-
     <footer>
         <p>&copy; 2025 PARTYSERVICE "Alexa" | Inhaberin: Alexandra Weber</p>
-        <p>Impressum | Datenschutz</p>
+        <p><a href="#" onclick="showSection('impressum')">Impressum</a> | <a href="#" onclick="showSection('datenschutz')">Datenschutz</a></p>
     </footer>
 
+    <section id="impressum" class="content">
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+        <p>Alexandra Weber<br>
+            Fuldastraße 35<br>
+            34270 Schauenburg<br>
+            Deutschland</p>
+        <p><strong>Kontakt:</strong><br>
+            Telefon: +49 151 28905309<br>
+            E-Mail: partyservicealexa@gmail.com</p>
+    </section>
+
+    <section id="datenschutz" class="content">
+        <h2>Datenschutzerklärung</h2>
+        <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG).</p>
+        <p>Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen sechs Monate bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+        <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit sowie Widerruf und Widerspruch. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich bei der Aufsichtsbehörde beschweren.</p>
+    </section>
     <script src="script.js"></script>
 </div>
 </body>
