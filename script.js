@@ -41,7 +41,6 @@ function addToCart(item) {
     cart[item] = (cart[item] || 0) + 1;
     updateCartCount();
     showNotification();
-    showCart(); // aktualisiert den Warenkorb
 }
 
 function removeFromCart(itemName) {
