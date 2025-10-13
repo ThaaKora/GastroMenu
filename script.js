@@ -120,7 +120,7 @@ function submitOrder() {
     const message = document.getElementById('message').value;
     const email = document.getElementById('email').value;
 
-    fetch('https://partyservice-backend.onrender.com/send', {
+    fetch('https://api.partyservicealexa.com/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cart, message, email })
